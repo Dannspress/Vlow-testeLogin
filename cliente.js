@@ -7,8 +7,13 @@ export class Cliente {
         this._senha = senha;
     }
 
-    autenticar(senha) {
-        if(senha == this._senha) return true;
+    autenticar(email, senha) {
+        if(senha == this._senha && email == this.email) return true;
         return false;
     }
+
+    // autenticar(email) {
+    //     if(email == this.email) return true;
+    //     return false;
+    // }
 }
