@@ -20,6 +20,14 @@ describe('LOGIN TEST', () => {
         })
 
         describe('E-MAIL', () => {
+            it('Testar E-mail incorreto (falta @)', () => {
+                expect(loginClient('danielwalterwork', 'AA123aabc')).toBe('Acrescente um @ ao endereço de E-mail');
+            });
+
+            it('Testar E-mail incorreto (nada após o @)', () => {
+                expect(loginClient('danielwalterwork@', 'AA123aabc')).toBe('Adicione algo após o @');
+            });
+            
             it('Testar E-mail incorreto (erro de digitação)', () => {
                 expect(loginClient('danielwalter@gmail.com', 'AA123aabc')).toBeFalse();
             });

@@ -12,7 +12,23 @@ function loginClient(email, senha) {
       if (senha == this._senha && email == this.email) {
         return true
       } else {
-        return false;
+        if (senha != this._senha) {
+          return false
+        } else {
+          if (this.email == '') {
+            return false
+          }else {
+            if (this.email.indexOf('@') < 1) {
+              return 'Acrescente um @ ao endereço de E-mail'
+            } else {
+              if (this.email[this.email.length -1] == '@') {
+                return 'Adicione algo após o @'
+              }else {
+                return false
+              }
+            }
+          }
+        };
       }
     }
   }
